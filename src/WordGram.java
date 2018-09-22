@@ -12,10 +12,10 @@ public class WordGram {
 	private int myHash;         // cached hash value
 
 	/**
-	 * Create WordGram (add comments)
-	 * @param source
-	 * @param start
-	 * @param size
+	 * Create WordGram constructor with parameters, String[] source, int start, and int size
+	 * @param source an array from which to put the strings within WordGram
+	 * @param start the starting index point from source
+	 * @param size the length of myWords
 	 */
 	public WordGram(String[] source, int start, int size) {
 		myWords = new String[size];
@@ -24,7 +24,6 @@ public class WordGram {
 		}
 		myToString = null;
 		myHash = 0;
-		// TODO: initialize myWords and ...
 	}
 
 	/**
@@ -40,8 +39,8 @@ public class WordGram {
 	}
 
 	/**
-	 * Complete this comment
-	 * @return
+	 * Return the order of the WordGram
+	 * @return the length of myWords
 	 */
 	public int length(){
 		// TODO: change this
@@ -61,7 +60,6 @@ public class WordGram {
 				return false;
 			}
 		}
-	    // TODO: complete this method
 		return true;
 	}
 
@@ -77,9 +75,9 @@ public class WordGram {
 	
 
 	/**
-	 * Create and complete this comment
+	 * Add String last to a new WordGram of the same size but delete the first element or String and then return new WordGram
 	 * @param last is last String of returned WordGram
-	 * @return
+	 * @return a new WordGram with String last and the first String of WordGram gone
 	 */
 	public WordGram shiftAdd(String last) {
 		WordGram wg = new WordGram(myWords,0,myWords.length);
