@@ -39,13 +39,22 @@ Both are putting WordGrams into a HashSet, so all repeats are thrown away and al
 benchmarking methods
 benchmark: first puts all the words in the file into an ArrayList, and then goes through the ArrayList, getting WSIZE WordGrams and adding
 them into a set
-benchmarkShift: on the other hand, this first gets the first WordGram and then goes through the file, adding WSIZE WordGrams along the way
+benchmarkShift: on the other hand, this first gets the first WordGram with an array and then goes through the file, adding WSIZE WordGrams along the way
 also into a set
 (3) Is the total amount of memory allocated for arrays
 the same or different in the two methods? Account for
 arrays created in the methods and arrays created by
 WordGram objects. Try to be quantitative in answering.
-It is different. In benchmark, an ArrayList is created to hold all the words in the file and then put into an array, so the array 
-is only the length of the file. However, in benchmarkShift, only an array that is sized WSIZE is created and then added to a set. However, 
-an array of size WSIZE is created as every time goes through the file. So benchmarkShift would have to create WSIZE * size of file # of memory
-to hold, while benchmarkShift only has to create one array which is size of the file.
+It is different. Although benchmark and benchmarkShift both use the same number of WordGrams because
+shiftAdd is the same as making a new WordGram, the memory allocation is different because benchmark,
+in the beginning, creates this massive array, that is of the file's length. On the other hand,
+benchmarkShift only creates a relatively small array with size WSIZE for the first WordGram, so in the 
+end, benchmark, ultimately, uses up more memory.
+Benchmark --> array of file size. --> makes new WordGrams while going through that array
+Benchmark --> array of WSIZE --> makes the same new number of WordGrams while going through the file,
+without any referencing to any array.
+
+
+
+
+

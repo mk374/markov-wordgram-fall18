@@ -67,7 +67,7 @@ public class WordGram {
 	public int hashCode(){
 		
 		if(myHash == 0 ) {
-			String str1 = this.toString();
+			String str1 = toString();
 			myHash = str1.hashCode();
 		}
 		return myHash;
