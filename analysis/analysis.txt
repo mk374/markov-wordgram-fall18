@@ -51,7 +51,7 @@ in the beginning, creates this massive array, that is of the file's length. On t
 benchmarkShift only creates a relatively small array with size WSIZE for the first WordGram, so in the 
 end, benchmark, ultimately, uses up more memory.
 Benchmark --> array of file size. --> makes new WordGrams while going through that array
-Benchmark --> array of WSIZE --> makes the same new number of WordGrams while going through the file,
+BenchmarkShift --> array of WSIZE --> makes the same new number of WordGrams while going through the file,
 without any referencing to any array.
 
 
